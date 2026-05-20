@@ -1,0 +1,9 @@
+name: weekly-planning
+display_name: Weekly Planning
+description: Personal weekly planning assistant — maintains a persistent task list and preferences in OneDrive, produces a past-week recap and next-week plan as concise Adaptive Card dashboards, surfaces public holidays and team OOO, and pulls priorities from line manager and direct reports.
+version: 1.0.3
+tags:
+  - productivity
+install_method: zip
+requires: []
+author: jforman

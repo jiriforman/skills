@@ -1,0 +1,11 @@
+name: rfp-evaluation
+display_name: RFP Evaluation
+description: Evaluates SaaS vendor proposals for CETIN (telco) procurement — weighted scoring matrix, vendor summaries, HTML dashboard, and shortlist memo. Always covers Security & GDPR, BSS/OSS integration, SLA/support, and Commercials & vendor viability.
+version: 1.0.0
+tags:
+  - finance
+  - business-analysis
+install_method: zip
+requires:
+  - cetin-design
+author: jforman
