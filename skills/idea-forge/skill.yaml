@@ -1,0 +1,11 @@
+name: idea-forge
+display_name: Idea Forge
+description: AI-guided PRD intake — a structured 8-phase business analyst conversation that captures a business idea (problem, As-Is / To-Be process with Mermaid diagrams, benefits, MoSCoW requirements) and emits a Markdown PRD plus a standalone HTML preview.
+version: 1.0.0
+tags:
+  - idea-specification
+  - business-analysis
+  - productivity
+install_method: zip
+requires: []
+author: jiriforman
