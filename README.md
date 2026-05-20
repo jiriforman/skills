@@ -15,7 +15,9 @@ Skills are bundles of instructions (and optional helper files) that teach Claude
 The table below is auto-generated from each skill's `skill.yaml` on every push to `main`. Click any `.zip` link to download a skill directly — no GitHub account needed.
 
 <!-- skills-table:start -->
-_No skills published yet. Check back soon, or browse the catalog at [ailearning.jforman.cz/skills](https://ailearning.jforman.cz/skills)._
+| Skill | Description | Tags | Version | Last update | Updated by | Download |
+|---|---|---|---|---|---|---|
+| [Idea Forge](skills/idea-forge) | AI-guided PRD intake — a structured 8-phase business analyst conversation that captures a business idea (problem, As-Is / To-Be process with Mermaid diagrams, benefits, MoSCoW requirements) and emits a Markdown PRD plus a standalone HTML preview. | `idea-specification`, `business-analysis`, `productivity` | `1.0.0` | 2026-05-20 | jformancz | [.zip](https://github.com/jiriforman/skills/releases/latest/download/idea-forge.zip) |
 <!-- skills-table:end -->
 
 ## Browse the catalog (web)
