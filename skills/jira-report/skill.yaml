@@ -1,0 +1,11 @@
+name: jira-report
+display_name: Jira Report
+description: Generates a CETIN-branded HTML dashboard report from a JIRA CSV export — status overview, sprint/velocity metrics, aging and blocker analysis, and project/epic breakdown rendered as interactive charts and tables.
+version: 1.0.0
+tags:
+  - reporting
+  - process-analysis
+install_method: zip
+requires:
+  - cetin-design
+author: jforman

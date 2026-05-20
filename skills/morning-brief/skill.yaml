@@ -1,0 +1,9 @@
+name: morning-brief
+display_name: Morning Brief
+description: Personalized daily morning brief — covers today's calendar, important email, Teams activity, Planner tasks, and (for managers) pending items from direct reports. Delivers an inline summary with a deep link to the Planner kanban, supports multiple languages, and can be scheduled to run automatically.
+version: 1.1.0
+tags:
+  - productivity
+install_method: zip
+requires: []
+author: jforman
