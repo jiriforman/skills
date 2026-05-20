@@ -10,9 +10,17 @@ Maintained by **Jiří Forman** — [LinkedIn](https://www.linkedin.com/in/jirif
 
 Skills are bundles of instructions (and optional helper files) that teach Claude how to do a specific task well. Drop one into **Claude Code** or **Microsoft 365 Copilot Cowork** and the model gains a new capability — it knows *when* to use the skill and *how*, so you don't have to re-explain the workflow every time.
 
-## Browse the catalog
+## Skills in this repo
 
-The canonical, always-up-to-date catalog (with search, tag filters, and one-click `.zip` downloads) lives here:
+The table below is auto-generated from each skill's `skill.yaml` on every push to `main`. Click any `.zip` link to download a skill directly — no GitHub account needed.
+
+<!-- skills-table:start -->
+_No skills published yet. Check back soon, or browse the catalog at [ailearning.jforman.cz/skills](https://ailearning.jforman.cz/skills)._
+<!-- skills-table:end -->
+
+## Browse the catalog (web)
+
+The catalog site mirrors the table above with search, tag filters, and richer descriptions:
 
 **👉 [ailearning.jforman.cz/skills](https://ailearning.jforman.cz/skills)**
 

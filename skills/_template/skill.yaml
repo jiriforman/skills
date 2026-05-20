@@ -1,0 +1,32 @@
+# skill.yaml — metadata for one skill.
+# Copy this file into your new skill's folder and fill it in.
+# CI reads these fields to build the README table and the release zips.
+
+# Required: machine-readable name. Must match the folder name. Lowercase, dash-separated.
+name: my-skill
+
+# Optional: human-readable name shown in the README table. Defaults to `name` if omitted.
+display_name: My Skill
+
+# Required: one-sentence description. Shown in the README and on the catalog site.
+description: Short description of what this skill does and when Claude should reach for it.
+
+# Required: semantic version. Bump on meaningful changes (patch=fix, minor=feature, major=breaking).
+version: 0.1.0
+
+# Optional: tag list. Used for filtering on the catalog site.
+# Suggested values: business-analysis, communication, finance, idea-specification,
+#                   presentation, process-analysis, productivity, reporting.
+tags:
+  - productivity
+
+# Required: how end users install this skill.
+#   "zip"   — must be installed from the packaged .zip (skill bundles helper files)
+#   "paste" — just paste the SKILL.md contents into Claude / Cowork
+install_method: zip
+
+# Optional: list of other skills this one depends on (by name).
+requires: []
+
+# Optional: GitHub handle of the original author.
+author: jiriforman
