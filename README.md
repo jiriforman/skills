@@ -2,6 +2,10 @@
 
 Public repository of the **skills** I'm using day-to-day (and skills I've helped prepare for colleagues).
 
+> **Note:** These skills were originally tailored for [CETIN](https://www.cetin.cz/) — branding, internal tooling, and workflows are specific to that context. You're welcome to **fork this repo and adapt them to your own organization and processes**. That's the whole point of sharing them.
+
+Maintained by **Jiří Forman** — [LinkedIn](https://www.linkedin.com/in/jiriforman/).
+
 ## What are skills?
 
 Skills are bundles of instructions (and optional helper files) that teach Claude how to do a specific task well. Drop one into **Claude Code** or **Microsoft 365 Copilot Cowork** and the model gains a new capability — it knows *when* to use the skill and *how*, so you don't have to re-explain the workflow every time.
@@ -44,6 +48,13 @@ Anyone is welcome to:
 - **Open a pull request** to contribute a new skill or improve an existing one.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for a step-by-step contributor's guide (friendly to GitHub newcomers).
+
+## Contact
+
+Questions, feedback, or want to share a skill you've adapted? Reach out:
+
+- **LinkedIn:** [linkedin.com/in/jiriforman](https://www.linkedin.com/in/jiriforman/)
+- **Issues:** [open one here](https://github.com/jiriforman/skills/issues/new)
 
 ## License
 
