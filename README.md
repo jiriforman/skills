@@ -2,7 +2,7 @@
 
 Public repository of the **skills** I'm using day-to-day (and skills I've helped prepare for colleagues).
 
-> **Note:** These skills were originally tailored for [CETIN](https://www.cetin.cz/) — branding, internal tooling, and workflows are specific to that context. You're welcome to **fork this repo and adapt them to your own organization and processes**. That's the whole point of sharing them.
+> **Note:** Most skills have **built-in onboarding** — the first time you use them, they ask a few questions to learn your context (your company's brand, your role, your preferred tools) and then tailor themselves to you. You don't need to fork or edit anything; just install and go. A few skills (mainly the CETIN-branded ones) are more hardwired to a specific organizational context — those are clearly named and are best used as a starting point if you want to adapt them to your own setup.
 
 Maintained by **Jiří Forman** — [LinkedIn](https://www.linkedin.com/in/jiriforman/).
 
@@ -17,6 +17,7 @@ The table below is auto-generated from each skill's `skill.yaml` on every push t
 <!-- skills-table:start -->
 | Skill | Description | Tags | Version | Last update | Updated by | Download |
 |---|---|---|---|---|---|---|
+| [Company Design](skills/company-design) | Self-configuring company design system — learns a company's brand once, then applies it everywhere. Runs a one-time onboarding to extract colors, fonts, and logos from a website, uploaded files, or brand guidelines, then automatically brands every business visual deliverable (presentations, documents, dashboards, HTML/React artifacts, charts, diagrams). | `communication`, `presentation`, `branding` | `1.0.0` | 2026-05-22 | jformancz | [.zip](https://github.com/jiriforman/skills/releases/latest/download/company-design.zip) |
 | [CETIN Design](skills/cetin-design) | CETIN corporate design system — applies CETIN branding (CETIN Blue + Red, Avenir/Arial, official logos, brand layouts) to visual outputs including presentations, HTML/React artifacts, dashboards, Excel charts, and Word documents. | `communication`, `presentation` | `1.3.0` | 2026-05-20 | jformancz | [.zip](https://github.com/jiriforman/skills/releases/latest/download/cetin-design.zip) |
 | [Company Design](skills/company-design) | Self-configuring company design system — learns a company's brand once, then applies it everywhere. Runs a one-time onboarding to extract colors, fonts, and logos from a website, uploaded files, or brand guidelines, then automatically brands every business visual deliverable (presentations, documents, dashboards, HTML/React artifacts, charts, diagrams). | `communication`, `presentation`, `branding` | `1.0.0` | 2026-05-22 | jformancz | [.zip](https://github.com/jiriforman/skills/releases/latest/download/company-design.zip) |
 | [Idea Forge](skills/idea-forge) | AI-guided PRD intake — a structured 8-phase business analyst conversation that captures a business idea (problem, As-Is / To-Be process with Mermaid diagrams, benefits, MoSCoW requirements) and emits a Markdown PRD plus a standalone HTML preview. | `idea-specification`, `business-analysis`, `productivity` | `1.0.0` | 2026-05-20 | jformancz | [.zip](https://github.com/jiriforman/skills/releases/latest/download/idea-forge.zip) |
