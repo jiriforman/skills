@@ -1,0 +1,11 @@
+name: company-design
+display_name: Company Design
+description: Self-configuring company design system — learns a company's brand once, then applies it everywhere. Runs a one-time onboarding to extract colors, fonts, and logos from a website, uploaded files, or brand guidelines, then automatically brands every business visual deliverable (presentations, documents, dashboards, HTML/React artifacts, charts, diagrams).
+version: 1.0.0
+tags:
+  - communication
+  - presentation
+  - branding
+install_method: zip
+requires: []
+author: jforman
