@@ -2,7 +2,7 @@
 
 Public repository of the **skills** I'm using day-to-day (and skills I've helped prepare for colleagues).
 
-> **Note:** These skills were originally tailored for [CETIN](https://www.cetin.cz/) — branding, internal tooling, and workflows are specific to that context. You're welcome to **fork this repo and adapt them to your own organization and processes**. That's the whole point of sharing them.
+> **Note:** Most skills have **built-in onboarding** — the first time you use them, they ask a few questions to learn your context (your company's brand, your role, your preferred tools) and then tailor themselves to you. You don't need to fork or edit anything; just install and go. A few skills (mainly the CETIN-branded ones) are more hardwired to a specific organizational context — those are clearly named and are best used as a starting point if you want to adapt them to your own setup.
 
 Maintained by **Jiří Forman** — [LinkedIn](https://www.linkedin.com/in/jiriforman/).
 
