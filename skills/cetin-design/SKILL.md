@@ -51,39 +51,59 @@ need for day-to-day output. Wording and values come from the official CETIN Bran
 ### Quick decision tree — which logo file to use
 
 Apply this every time you place a logo. Works identically in chat answers, generated code,
-Word/PowerPoint/Excel output, HTML/React artifacts, or Cowork-driven file edits. Audience
-language does **not** affect logo choice — the international CMYK PNGs are canonical for
-every CETIN deliverable (Czech, English, internal, external, .cz domain materials, all of it).
+Word/PowerPoint/Excel output, HTML/React artifacts, or Cowork-driven file edits.
 
 1. **Which sub-brand is the deliverable for?**
-   - DunAI initiative? → use the **DunAI** files (see Sub-brands §3 below).
-   - CETIN.DIGITAL programme? → use the **standard CETIN** PNG files plus the CETIN.DIGITAL text mark.
-   - Anything else? → use the **standard CETIN** PNG files. Continue to step 2.
-2. **What's the background color the logo will sit on?**
+   - DunAI initiative? → use the **DunAI** files (see Sub-brands §3 below). Skip the rest.
+   - CETIN.DIGITAL programme? → use the **standard CETIN** files below plus the CETIN.DIGITAL text mark.
+   - Anything else? → standard CETIN. Continue to step 2.
+2. **Which market / audience is the deliverable for?**
+   - **International / English-language / cross-border** — *this is the default when unsure* →
+     the **no-claim** files `CETIN_CMYK_*_international_no_claim.png` (or `cetin-logo-noclaim.svg`
+     for web). This is the new **main** logo.
+   - **Czech-market / Czech-language** (domestic CETIN a.s. audience, Czech copy, .cz-facing) →
+     the `CETIN_CMYK_*_cz.png` files.
+   - The **claim** files `CETIN_CMYK_*_international.png` (MEMBER OF PPF GROUP) are **backup only** —
+     use them solely when a deliverable explicitly requires the PPF-group claim
+     (formal / legal / contractual). See "With claim vs without claim" below.
+3. **What's the background color the logo will sit on?**
    - Dark background (CETIN-blue area, near-black, dark photo) → `*_negativ_*` (white wordmark) file.
    - Light background (white, light gray, light photo) → `*_pozitiv_*` (CETIN-blue wordmark) file.
 
 This decision is the same whether you are typing the path into a PptxGenJS call, an `<img src>`,
 a markdown reference, or a Cowork file-write. **Always use the relative path inside `references/`.**
 
-### Official files — the only canonical CETIN logos
+### Official files — canonical CETIN logos
+
+Select by **market** (step 2) then **background** (step 3). All are correctly constructed
+(wedge-cut C, official triangle proportions, brand-spec colors).
+
+**International / cross-border — PRIMARY (no claim), the default main logo:**
 
 | File | Use on | Description |
 |------|--------|-------------|
-| `references/CETIN_CMYK_negativ_international.png` | Dark backgrounds | White CETIN wordmark + red triangle |
-| `references/CETIN_CMYK_pozitiv_international.png` | Light backgrounds | CETIN-blue wordmark + red triangle |
+| `references/CETIN_CMYK_pozitiv_international_no_claim.png` | Light backgrounds | CETIN-blue wordmark + red triangle, no claim |
+| `references/CETIN_CMYK_negativ_international_no_claim.png` | Dark backgrounds | White wordmark + red triangle, no claim |
+| `references/cetin-logo-noclaim.svg` | Light backgrounds, web/HTML | Vector version of the positive no-claim mark (CETIN blue). Crisp at any size — use in HTML/React where vector is preferred. |
 
-These two PNGs are the canonical CETIN logo for **every** CETIN material — Czech and English,
-internal and external, cetin.cz and international, CETIN.DIGITAL programme materials included.
-They are the only files in `references/` with the correct construction (the wedge-cut C, the
-official triangle proportions, the brand-spec colors).
+**Czech market:**
 
-> **Warning — do not use the `.cz` SVG placeholders.** The files
-> `references/logo_cetin_dark_cz.svg` and `references/logo_cetin_light_cz.svg` are 222-byte
-> simplified placeholders (a plain triangle plus bare "CETIN" text in a generic sans-serif,
-> with no wedge-cut on the C and incorrect typography). They look unofficial when rendered
-> and **must not be embedded in any deliverable**. Treat them as a known issue until proper
-> Czech-domain SVGs arrive — at which point this section will be updated to point at them.
+| File | Use on | Description |
+|------|--------|-------------|
+| `references/CETIN_CMYK_pozitiv_cz.png` | Light backgrounds | CETIN-blue wordmark + red triangle, Czech variant |
+| `references/CETIN_CMYK_negativ_cz.png` | Dark backgrounds | White wordmark + red triangle, Czech variant |
+
+**International with claim — BACKUP only (MEMBER OF PPF GROUP):**
+
+| File | Use on | Description |
+|------|--------|-------------|
+| `references/CETIN_CMYK_pozitiv_international.png` | Light backgrounds | Blue wordmark + claim. Use only when the PPF-group claim is explicitly required. |
+| `references/CETIN_CMYK_negativ_international.png` | Dark backgrounds | White wordmark + claim. Use only when the PPF-group claim is explicitly required. |
+
+All sets share the correct construction (the wedge-cut C, the official triangle proportions,
+the brand-spec colors). The **no-claim international pair is the default main logo**; reach for
+the `_cz` files for Czech-market deliverables, the claim pair only when the "MEMBER OF PPF
+GROUP" claim is explicitly required, and the DunAI files for DunAI work (Sub-brands §3).
 
 If even the canonical PNGs are somehow unavailable, fall back to a styled-text logo: `▶ CETIN`
 with the triangle in CETIN red (`#f12e49`) and the wordmark in CETIN blue (`#300091`) on light
@@ -100,7 +120,7 @@ raw, the visible logo will end up tiny inside its placement box and the deck wil
 ```python
 from PIL import Image
 
-img = Image.open('references/CETIN_CMYK_pozitiv_international.png').convert('RGBA')
+img = Image.open('references/CETIN_CMYK_pozitiv_international_no_claim.png').convert('RGBA')
 margin = int(min(img.size) * 0.02)
 b = img.getbbox()
 img.crop((
@@ -112,18 +132,22 @@ img.crop((
 # Cropped aspect ratio is ~5.55:1.
 ```
 
-Run the same recipe on `CETIN_CMYK_negativ_international.png` to produce a dark-bg variant.
+Run the same recipe on `CETIN_CMYK_negativ_international_no_claim.png` to produce a dark-bg
+variant. Swap in the `_cz` or claim filenames when the market/backup rules call for them.
 Embed the cropped output directly via your format's native image API:
 
 - **PptxGenJS:** `slide.addImage({ path: 'logo_official_light.png', x, y, w, h })`
 - **python-pptx:** `slide.shapes.add_picture('logo_official_light.png', x, y, width, height)`
-- **HTML / React:** `<img src="references/CETIN_CMYK_pozitiv_international.png" alt="CETIN" />`
-  (browsers handle transparent padding via CSS `object-fit`)
+- **HTML / React:** `<img src="references/cetin-logo-noclaim.svg" alt="CETIN" />` (vector, no
+  padding) or the no-claim PNG if you need a raster
 - **docx (python-docx):** `paragraph.add_run().add_picture('logo_official_light.png', width=...)`
 - **Excel (openpyxl / xlsxwriter):** `worksheet.insert_image(...)` / `add_image(...)`
 
-**Direct PNG embed only.** Do not convert to SVG, do not redraw with `cairosvg`, do not
-reconstruct from primitive shapes. The CMYK PNG is the source of truth.
+**For office formats (PPTX, DOCX, XLSX, PDF), embed the cropped PNG** — do not reconstruct the
+logo from primitive shapes. The cropped CMYK PNG is the source of truth there. The official
+`cetin-logo-noclaim.svg` may be used directly in HTML/React; if you need it in an office
+format, rasterize it to a high-resolution PNG (e.g. via `cairosvg`) rather than redrawing it.
+Never hand-redraw any logo.
 
 ### Logo placement on slides (CETIN house rule)
 
@@ -158,13 +182,21 @@ is the only acceptable source for any deliverable.
 - **Minimum size:** 100 px wide recommended; 60 px absolute minimum. Below 100 px, prefer the
   logo without claim.
 
-### Logo with claim vs. without claim (per brand manual §2.2)
+### Logo with claim vs. without claim (CETIN house rule — overrides brand manual §2.2)
 
-- **Without claim** (default): B2C communication, customer-facing materials, small formats.
-- **With claim** ("MEMBER OF PPF GROUP"): B2B, internal, and international communication.
+The 2023 brand manual paired the claim with B2B / internal / international comms. **CETIN's
+current house rule overrides this: the no-claim logo is the default everywhere**, including
+international materials.
 
-The claim is set in Avenir Next LT Pro Demi Bold, all caps, lowercase tracking 5 pt, sized
-9.5 pt when the logo is 50 mm wide.
+- **Without claim** (default — all international and most deliverables):
+  `CETIN_CMYK_*_international_no_claim.png` or `cetin-logo-noclaim.svg`.
+- **Czech market:** `CETIN_CMYK_*_cz.png`.
+- **With claim** ("MEMBER OF PPF GROUP", backup only): `CETIN_CMYK_*_international.png`. Use
+  solely when a deliverable explicitly requires the PPF-group claim (formal, legal, or
+  contractual).
+
+When the claim version is used, the claim is set in Avenir Next LT Pro Demi Bold, all caps,
+lowercase tracking 5 pt, sized 9.5 pt when the logo is 50 mm wide.
 
 ### Prohibited use (per brand manual §2.18)
 
@@ -319,17 +351,18 @@ There are three identities. Default to **CETIN** unless the user specifies other
 
 ### 1. CETIN (default)
 
-Use for everything unless told otherwise. **One canonical pair, used for every audience and
-every market** (Czech, English, internal, external, .cz domain, CETIN.DIGITAL — all of it):
+Use for everything unless told otherwise. Pick the file set by **market** first, then by
+**background** (see the decision tree above):
 
-- Dark backgrounds: `references/CETIN_CMYK_negativ_international.png`
-- Light backgrounds: `references/CETIN_CMYK_pozitiv_international.png`
-
-Pick by background, not by audience.
-
-> **Warning — the `.cz` SVG files in `references/` are 222-byte placeholders** with the wrong
-> typography and no wedge-cut on the C. Do not use `logo_cetin_dark_cz.svg` or
-> `logo_cetin_light_cz.svg` in any deliverable until proper Czech-domain SVGs replace them.
+- **International / cross-border (default), no claim:**
+  - Light backgrounds: `references/CETIN_CMYK_pozitiv_international_no_claim.png` (or `cetin-logo-noclaim.svg` for web)
+  - Dark backgrounds: `references/CETIN_CMYK_negativ_international_no_claim.png`
+- **Czech market:**
+  - Light backgrounds: `references/CETIN_CMYK_pozitiv_cz.png`
+  - Dark backgrounds: `references/CETIN_CMYK_negativ_cz.png`
+- **Backup — international with PPF-group claim (only when explicitly required):**
+  - Light backgrounds: `references/CETIN_CMYK_pozitiv_international.png`
+  - Dark backgrounds: `references/CETIN_CMYK_negativ_international.png`
 
 ### 2. CETIN.DIGITAL (Czech CETIN digital transformation programme)
 
@@ -505,7 +538,8 @@ updates, all-hands decks, working sessions, weekly reports). Routine content liv
   CETIN-Blue type on white is the default for content slides.
 - **Don't put an accent line directly under a slide title.** Under-title rules are an AI-slide
   tell — leave the space below the title clean.
-- Don't use the `.cz` SVG placeholders (`logo_cetin_*_cz.svg`) for any deliverable — they are
-  222-byte simplified files with the wrong typography. Use the canonical CMYK PNGs.
+- Don't default to the claim logo (`CETIN_CMYK_*_international.png`, MEMBER OF PPF GROUP) — it
+  is now **backup only**. Default to the no-claim international files; use `_cz` for
+  Czech-market work and the DunAI files for DunAI projects.
 - Don't embed the canonical PNGs without first cropping to the alpha bbox — raw they have
   large transparent padding and will render tiny in their placement box.
