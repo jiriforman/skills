@@ -14,6 +14,13 @@ Skills are bundles of instructions (and optional helper files) that teach Claude
 
 The table below is auto-generated from each skill's `skill.yaml` on every push to `main`. Click any `.zip` link to download a skill directly — no GitHub account needed.
 
+> **⚠️ Two CETIN Design variants — install only one.** The table lists two CETIN-branded design skills. They are **mutually exclusive**: installing both makes Claude apply two competing design methods to the same request, and they'll fight over every CETIN visual.
+>
+> - **[CETIN Design](skills/cetin-design)** (`cetin-design`) — the original, **text-heavy** skill. Claude builds each deliverable from the brand rules (colors, fonts, logos, layouts) spelled out in detail, redrawing components to spec.
+> - **[CETIN Design (Template)](skills/cetin-design-template)** (`cetin-design-template`) — the newer, **template-driven** skill. For PowerPoint it edits the bundled official CETIN template (`CETIN_sablona_prezentace_Final.pptx`) directly, reusing its ready-made slide layouts 1:1, and only generates fresh slides for text-heavy content the template can't cover.
+>
+> Both are useful — pick the one that matches how you want decks produced, and download just that one.
+
 <!-- skills-table:start -->
 | Skill | Description | Tags | Version | Last update | Updated by | Download |
 |---|---|---|---|---|---|---|
