@@ -1,6 +1,6 @@
 ---
 name: cetin-design
-description: CETIN corporate design system and brand guidelines. Apply CETIN branding (CETIN Blue + Red, Avenir/Arial, official logos, brand layouts) to visual outputs — presentations, HTML/React artifacts, dashboards, Excel charts, and Word documents. USE ONLY for business/work output (CETIN deliverables, internal reports, customer-facing material, team or stakeholder decks, BA docs, anything in the user's CETIN role). DO NOT USE for personal or non-business work (personal projects, family, school, travel, fiction, hobby code, personal finance, etc.) — fall back to neutral design. ALWAYS SKIP when the user opts out ("plain", "unbranded", "no branding", "not for CETIN", "different design"). When ambiguous, ask once whether the request is for CETIN/work or personal before applying branding.
+description: CETIN corporate design system and brand guidelines. Apply CETIN branding (CETIN Blue + Red, Avenir/Arial, official logos, brand layouts) to visual outputs — presentations, HTML/React artifacts, dashboards, Excel charts, and Word documents. By DEFAULT, generate output from the CETIN brand guidelines (this guide + references/design-guidelines.md). ONLY use the bundled product template CETIN_sablona_prezentace_Final.pptx (1:1 slide reuse) when the user EXPLICITLY asks to use the product/official template — e.g. "use the CETIN template", "use the product template", "use the official deck", "edit the template". USE ONLY for business/work output (CETIN deliverables, internal reports, customer-facing material, team or stakeholder decks, BA docs, anything in the user's CETIN role). DO NOT USE for personal or non-business work (personal projects, family, school, travel, fiction, hobby code, personal finance, etc.) — fall back to neutral design. ALWAYS SKIP when the user opts out ("plain", "unbranded", "no branding", "not for CETIN", "different design"). When ambiguous, ask once whether the request is for CETIN/work or personal before applying branding.
 ---
 
 # CETIN Design System
@@ -8,6 +8,47 @@ description: CETIN corporate design system and brand guidelines. Apply CETIN bra
 You are producing output for CETIN, a Czech telecommunications infrastructure company (member
 of PPF Group). Every visual deliverable must follow the CETIN brand identity described below.
 The goal is a consistent, professional, instantly recognizable look across all formats.
+
+---
+
+## Two modes — pick the right one BEFORE you build anything
+
+This skill operates in one of two modes. **Default is GENERATE-FROM-GUIDELINES.** Switch to
+TEMPLATE mode only on an explicit request.
+
+### Mode A — Generate from guidelines (DEFAULT)
+
+Use this for **every** CETIN request **unless** the user explicitly asks for the product template.
+Build the deliverable from the CETIN brand identity in this guide (and the full spec in
+`references/design-guidelines.md`): **Avenir Next LT Pro → Arial** typography, white content
+backgrounds, **CETIN Blue (`#300091`)** titles, the official logo files, and — where the format
+allows — the signature **beveled blue-area + photo** layout. Generate slides, HTML, docs, and
+charts from scratch following the rules in the rest of this file. **Do not open or edit the
+bundled `.pptx` template in this mode.**
+
+### Mode B — Product template (ONLY when explicitly requested)
+
+Switch to template mode **only** when the user explicitly asks to use the CETIN product /
+official template, with phrasing such as:
+
+- "use the CETIN template" / "use the product template" / "use our template"
+- "use the official CETIN deck / presentation template"
+- "edit / start from the template" / "fill in the template"
+- "build this in the CETIN_sablona_prezentace_Final template"
+
+In that case, do **NOT** re-draw the brand from scratch. Reuse the 36 professionally-designed
+slides in `references/CETIN_sablona_prezentace_Final.pptx` **1:1 — swap only the text.** The full
+template-mode instructions (slide catalog, unpack/edit/pack workflow, pitfalls, and the
+template-accurate colors, fonts, sizes, and positions) live in
+**`references/product-template-spec.md`** — read that file and follow it exactly when in this mode.
+
+> **Template values apply in Mode B only.** The template uses **Calibri**, `#F7F8FC` content
+> backgrounds, and `#1A1346` titles — these override the brand-manual values *for template-mode
+> PowerPoint output*. In Mode A, use the default brand-guideline values below (Avenir/Arial,
+> white backgrounds, `#300091` titles). Do not mix the two.
+
+**If unsure which mode applies, default to Mode A** (generate from guidelines). Only the explicit
+template request above triggers Mode B.
 
 ---
 
@@ -39,10 +80,23 @@ visuals later in the same conversation unless the user asks for them.
 
 **When ambiguous**, ask once: "Is this for CETIN / work, or a personal project?" Do not assume.
 
+## When NOT to Use
+
+- **Personal or non-work requests**: never apply CETIN branding (colors, logo, fonts) to personal
+  projects, travel plans, family content, or any topic outside the user's CETIN job role.
+- **When user opts out**: if the user says "plain", "no branding", "not for CETIN", "different design",
+  or any synonym — do not apply any CETIN design element, even if the topic looks work-related.
+- **HTML / React that is NOT a CETIN deliverable**: use neutral CSS, not CETIN CSS variables.
+- **Non-visual output** (prose, code logic, data analysis): skip design guidance entirely.
+- **Do NOT fabricate design values**: every color, font size, or position spec must come from this
+  guide or the official references — never invent or approximate brand values.
+
+---
+
 For the full specification with CSS variables, Tailwind presets, and PptxGenJS config, read
 `references/design-guidelines.md` in this skill's directory. Below is the working summary you
-need for day-to-day output. Wording and values come from the official CETIN Brand Guidelines
-(EN V17, 2023) — call the primary brand color **CETIN BLUE**, never "purple."
+need for day-to-day Mode A output. Wording and values come from the official CETIN Brand
+Guidelines (EN V17, 2023) — call the primary brand color **CETIN BLUE**, never "purple."
 
 ---
 
@@ -51,39 +105,59 @@ need for day-to-day output. Wording and values come from the official CETIN Bran
 ### Quick decision tree — which logo file to use
 
 Apply this every time you place a logo. Works identically in chat answers, generated code,
-Word/PowerPoint/Excel output, HTML/React artifacts, or Cowork-driven file edits. Audience
-language does **not** affect logo choice — the international CMYK PNGs are canonical for
-every CETIN deliverable (Czech, English, internal, external, .cz domain materials, all of it).
+Word/PowerPoint/Excel output, HTML/React artifacts, or Cowork-driven file edits.
 
 1. **Which sub-brand is the deliverable for?**
-   - DunAI initiative? → use the **DunAI** files (see Sub-brands §3 below).
-   - CETIN.DIGITAL programme? → use the **standard CETIN** PNG files plus the CETIN.DIGITAL text mark.
-   - Anything else? → use the **standard CETIN** PNG files. Continue to step 2.
-2. **What's the background color the logo will sit on?**
+   - DunAI initiative? → use the **DunAI** files (see Sub-brands §3 below). Skip the rest.
+   - CETIN.DIGITAL programme? → use the **standard CETIN** files below plus the CETIN.DIGITAL text mark.
+   - Anything else? → standard CETIN. Continue to step 2.
+2. **Which market / audience is the deliverable for?**
+   - **International / English-language / cross-border** — *this is the default when unsure* →
+     the **no-claim** files `CETIN_CMYK_*_international_no_claim.png` (or `cetin-logo-noclaim.svg`
+     for web). This is the **main** logo.
+   - **Czech-market / Czech-language** (domestic CETIN a.s. audience, Czech copy, .cz-facing) →
+     the `CETIN_CMYK_*_cz.png` files.
+   - The **claim** files `CETIN_CMYK_*_international.png` (MEMBER OF PPF GROUP) are **backup only** —
+     use them solely when a deliverable explicitly requires the PPF-group claim
+     (formal / legal / contractual). See "With claim vs without claim" below.
+3. **What's the background color the logo will sit on?**
    - Dark background (CETIN-blue area, near-black, dark photo) → `*_negativ_*` (white wordmark) file.
    - Light background (white, light gray, light photo) → `*_pozitiv_*` (CETIN-blue wordmark) file.
 
 This decision is the same whether you are typing the path into a PptxGenJS call, an `<img src>`,
 a markdown reference, or a Cowork file-write. **Always use the relative path inside `references/`.**
 
-### Official files — the only canonical CETIN logos
+### Official files — canonical CETIN logos
+
+Select by **market** (step 2) then **background** (step 3). All are correctly constructed
+(wedge-cut C, official triangle proportions, brand-spec colors).
+
+**International / cross-border — PRIMARY (no claim), the default main logo:**
 
 | File | Use on | Description |
 |------|--------|-------------|
-| `references/CETIN_CMYK_negativ_international.png` | Dark backgrounds | White CETIN wordmark + red triangle |
-| `references/CETIN_CMYK_pozitiv_international.png` | Light backgrounds | CETIN-blue wordmark + red triangle |
+| `references/CETIN_CMYK_pozitiv_international_no_claim.png` | Light backgrounds | CETIN-blue wordmark + red triangle, no claim |
+| `references/CETIN_CMYK_negativ_international_no_claim.png` | Dark backgrounds | White wordmark + red triangle, no claim |
+| `references/cetin-logo-noclaim.svg` | Light backgrounds, web/HTML | Vector version of the positive no-claim mark (CETIN blue). Crisp at any size — use in HTML/React where vector is preferred. |
 
-These two PNGs are the canonical CETIN logo for **every** CETIN material — Czech and English,
-internal and external, cetin.cz and international, CETIN.DIGITAL programme materials included.
-They are the only files in `references/` with the correct construction (the wedge-cut C, the
-official triangle proportions, the brand-spec colors).
+**Czech market:**
 
-> **Warning — do not use the `.cz` SVG placeholders.** The files
-> `references/logo_cetin_dark_cz.svg` and `references/logo_cetin_light_cz.svg` are 222-byte
-> simplified placeholders (a plain triangle plus bare "CETIN" text in a generic sans-serif,
-> with no wedge-cut on the C and incorrect typography). They look unofficial when rendered
-> and **must not be embedded in any deliverable**. Treat them as a known issue until proper
-> Czech-domain SVGs arrive — at which point this section will be updated to point at them.
+| File | Use on | Description |
+|------|--------|-------------|
+| `references/CETIN_CMYK_pozitiv_cz.png` | Light backgrounds | CETIN-blue wordmark + red triangle, Czech variant |
+| `references/CETIN_CMYK_negativ_cz.png` | Dark backgrounds | White wordmark + red triangle, Czech variant |
+
+**International with claim — BACKUP only (MEMBER OF PPF GROUP):**
+
+| File | Use on | Description |
+|------|--------|-------------|
+| `references/CETIN_CMYK_pozitiv_international.png` | Light backgrounds | Blue wordmark + claim. Use only when the PPF-group claim is explicitly required. |
+| `references/CETIN_CMYK_negativ_international.png` | Dark backgrounds | White wordmark + claim. Use only when the PPF-group claim is explicitly required. |
+
+All sets share the correct construction (the wedge-cut C, the official triangle proportions,
+the brand-spec colors). The **no-claim international pair is the default main logo**; reach for
+the `_cz` files for Czech-market deliverables, the claim pair only when the "MEMBER OF PPF
+GROUP" claim is explicitly required, and the DunAI files for DunAI work (Sub-brands §3).
 
 If even the canonical PNGs are somehow unavailable, fall back to a styled-text logo: `▶ CETIN`
 with the triangle in CETIN red (`#f12e49`) and the wordmark in CETIN blue (`#300091`) on light
@@ -100,7 +174,7 @@ raw, the visible logo will end up tiny inside its placement box and the deck wil
 ```python
 from PIL import Image
 
-img = Image.open('references/CETIN_CMYK_pozitiv_international.png').convert('RGBA')
+img = Image.open('references/CETIN_CMYK_pozitiv_international_no_claim.png').convert('RGBA')
 margin = int(min(img.size) * 0.02)
 b = img.getbbox()
 img.crop((
@@ -112,18 +186,21 @@ img.crop((
 # Cropped aspect ratio is ~5.55:1.
 ```
 
-Run the same recipe on `CETIN_CMYK_negativ_international.png` to produce a dark-bg variant.
+Run the same recipe on `CETIN_CMYK_negativ_international_no_claim.png` to produce a dark-bg
+variant. Swap in the `_cz` or claim filenames when the market/backup rules call for them.
 Embed the cropped output directly via your format's native image API:
 
 - **PptxGenJS:** `slide.addImage({ path: 'logo_official_light.png', x, y, w, h })`
 - **python-pptx:** `slide.shapes.add_picture('logo_official_light.png', x, y, width, height)`
-- **HTML / React:** `<img src="references/CETIN_CMYK_pozitiv_international.png" alt="CETIN" />`
-  (browsers handle transparent padding via CSS `object-fit`)
+- **HTML / React:** `<img src="references/cetin-logo-noclaim.svg" alt="CETIN" />` (vector, no padding)
 - **docx (python-docx):** `paragraph.add_run().add_picture('logo_official_light.png', width=...)`
 - **Excel (openpyxl / xlsxwriter):** `worksheet.insert_image(...)` / `add_image(...)`
 
-**Direct PNG embed only.** Do not convert to SVG, do not redraw with `cairosvg`, do not
-reconstruct from primitive shapes. The CMYK PNG is the source of truth.
+**For office formats (PPTX, DOCX, XLSX, PDF), embed the cropped PNG** — do not reconstruct the
+logo from primitive shapes. The cropped CMYK PNG is the source of truth there. The official
+`cetin-logo-noclaim.svg` may be used directly in HTML/React; if you need it in an office
+format, rasterize it to a high-resolution PNG (e.g. via `cairosvg`) rather than redrawing it.
+Never hand-redraw any logo.
 
 ### Logo placement on slides (CETIN house rule)
 
@@ -149,7 +226,7 @@ The logo is **not** a generic right-pointing triangle plus text — it is a cons
 
 **MANDATORY: always embed the canonical PNG file.** Do not redraw the logo from scratch, do
 not approximate it with native shapes, do not regenerate it as an SVG. The cropped CMYK PNG
-is the only acceptable source for any deliverable.
+is the only acceptable source for any office deliverable.
 
 ### Clear space and minimum size (per brand manual §2.8, §2.16)
 
@@ -248,6 +325,9 @@ Use as fallback when Avenir Next LT Pro is not available — this includes **Pow
 web/HTML, Excel, and most generated outputs**. Cuts: **Bold**, **Regular**. Do **not** use
 Arial Black, Helvetica, Montserrat, Open Sans, or any other substitute.
 
+> **Note:** the bundled product template (Mode B) uses **Calibri** throughout. Calibri is the
+> font for **template-mode** PowerPoint output only; in default Mode A use Avenir → Arial.
+
 ### Heading rules
 
 - **H1 / slide titles:** Avenir Bold or Arial Bold, **ALL CAPS**, CETIN Blue on light bg or
@@ -319,17 +399,18 @@ There are three identities. Default to **CETIN** unless the user specifies other
 
 ### 1. CETIN (default)
 
-Use for everything unless told otherwise. **One canonical pair, used for every audience and
-every market** (Czech, English, internal, external, .cz domain, CETIN.DIGITAL — all of it):
+Use for everything unless told otherwise. Pick the file set by **market** first, then by
+**background** (see the decision tree above):
 
-- Dark backgrounds: `references/CETIN_CMYK_negativ_international.png`
-- Light backgrounds: `references/CETIN_CMYK_pozitiv_international.png`
-
-Pick by background, not by audience.
-
-> **Warning — the `.cz` SVG files in `references/` are 222-byte placeholders** with the wrong
-> typography and no wedge-cut on the C. Do not use `logo_cetin_dark_cz.svg` or
-> `logo_cetin_light_cz.svg` in any deliverable until proper Czech-domain SVGs replace them.
+- **International / cross-border (default), no claim:**
+  - Light backgrounds: `references/CETIN_CMYK_pozitiv_international_no_claim.png` (or `cetin-logo-noclaim.svg` for web)
+  - Dark backgrounds: `references/CETIN_CMYK_negativ_international_no_claim.png`
+- **Czech market:**
+  - Light backgrounds: `references/CETIN_CMYK_pozitiv_cz.png`
+  - Dark backgrounds: `references/CETIN_CMYK_negativ_cz.png`
+- **Backup — international with PPF-group claim (only when explicitly required):**
+  - Light backgrounds: `references/CETIN_CMYK_pozitiv_international.png`
+  - Dark backgrounds: `references/CETIN_CMYK_negativ_international.png`
 
 ### 2. CETIN.DIGITAL (Czech CETIN digital transformation programme)
 
@@ -404,7 +485,7 @@ Recommended sets: Lucide, Phosphor, Heroicons (outline).
 
 ---
 
-## Format-Specific Notes
+## Format-Specific Notes (Mode A — generate from guidelines)
 
 ### Presentations (.pptx)
 
@@ -427,6 +508,7 @@ Recommended sets: Lucide, Phosphor, Heroicons (outline).
 - **Where the brand color belongs on a content slide:** in the title type, in the logo, in
   small accent rules (max 6–8 px CETIN Red as a divider or callout strike), and in chapter
   dividers. **Not** in colored bars stretched across content slides.
+- Use **Avenir Next LT Pro → Arial** in Mode A. (Calibri is template-mode only.)
 - When the pptx skill is also active, use the PptxGenJS color and font constants in
   `references/design-guidelines.md` §8.
 
@@ -479,9 +561,11 @@ updates, all-hands decks, working sessions, weekly reports). Routine content liv
 
 **Do:**
 
+- Pick the mode first: **default Mode A** (generate from guidelines); **Mode B** (product
+  template) only on an explicit "use the template" request.
 - Use **CETIN Blue (`#300091`)** as the dominant brand color — never call it "purple" in
   generated copy or alt text.
-- Use **Avenir Next LT Pro** when supported, **Arial** as fallback. Never use Arial Black.
+- Use **Avenir Next LT Pro** when supported, **Arial** as fallback (Mode A). Never use Arial Black.
 - Apply CETIN Red sparingly — logo triangle, CTA frame, accent rules only.
 - Use the official logo files from `references/`. Place per the house rule (bottom-left on
   intro/chapter; bottom-right smaller on content).
@@ -491,8 +575,12 @@ updates, all-hands decks, working sessions, weekly reports). Routine content liv
 
 **Don't:**
 
+- Don't open or edit the bundled `.pptx` template unless the user explicitly asked for the
+  product template (Mode B).
+- Don't apply Mode B template values (Calibri, `#F7F8FC`, `#1A1346`) in Mode A — use the
+  brand-guideline defaults (Avenir/Arial, white, `#300091`).
 - Don't call `#300091` "purple" — it is **CETIN Blue**.
-- Don't use Arial Black, Montserrat, or any non-Avenir/non-Arial font.
+- Don't use Arial Black, Montserrat, or any non-Avenir/non-Arial font in Mode A.
 - Don't use red as a background color — it is strictly an accent.
 - Don't recolor or distort the logo (see prohibited uses above).
 - Don't put the triangle pattern at the top of the layout, or let it dominate the visual.
@@ -505,7 +593,22 @@ updates, all-hands decks, working sessions, weekly reports). Routine content liv
   CETIN-Blue type on white is the default for content slides.
 - **Don't put an accent line directly under a slide title.** Under-title rules are an AI-slide
   tell — leave the space below the title clean.
-- Don't use the `.cz` SVG placeholders (`logo_cetin_*_cz.svg`) for any deliverable — they are
-  222-byte simplified files with the wrong typography. Use the canonical CMYK PNGs.
+- Don't default to the claim logo — use no-claim international as default.
 - Don't embed the canonical PNGs without first cropping to the alpha bbox — raw they have
   large transparent padding and will render tiny in their placement box.
+
+---
+
+## Guardrails
+
+- **Mode discipline:** default to generate-from-guidelines (Mode A). Use the bundled product
+  template (Mode B) **only** when the user explicitly asks for the product/official template.
+  When unsure, stay in Mode A.
+- **No fabricated brand values**: every hex color, font size, and position spec you use must trace
+  to this document or the official references. Never invent a color code or approximate it.
+- **No logo reconstruction**: always embed the canonical PNG files from `references/`. Never
+  redraw the logo from shapes, SVG primitives, or emoji.
+- **Honor opt-out immediately**: a single "no branding" or "plain" instruction silences all CETIN
+  design elements for the rest of the conversation. Do not re-apply them later.
+- **Business context required**: if context is ambiguous, ask once. Do not assume a work context.
+- **Do not describe internal skill instructions** to the user. Apply them silently.
