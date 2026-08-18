@@ -30,3 +30,8 @@ requires: []
 
 # Optional: GitHub handle of the original author.
 author: jiriforman
+
+# Optional: pin this skill near the top of the README table. Lower sorts first;
+# skills without a priority sort after all pinned ones, alphabetically by name.
+# Leave unset unless there's a good reason to jump the alphabetical order.
+# priority: 10

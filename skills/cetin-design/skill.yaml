@@ -8,3 +8,4 @@ tags:
 install_method: zip
 requires: []
 author: jforman
+priority: 1
