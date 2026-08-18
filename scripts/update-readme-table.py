@@ -63,8 +63,17 @@ def load_skills() -> list[dict]:
                 "tags": data.get("tags", []) or [],
                 "date": date,
                 "author": author,
+                "priority": data.get("priority"),
             }
         )
+    # Pinned skills (explicit `priority` in skill.yaml) sort first, lowest first;
+    # everything else follows, alphabetically by display name.
+    skills.sort(
+        key=lambda s: (
+            s["priority"] if s["priority"] is not None else float("inf"),
+            s["display_name"].lower(),
+        )
+    )
     return skills
 
 

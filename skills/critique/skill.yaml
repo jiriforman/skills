@@ -1,0 +1,11 @@
+name: critique
+display_name: Critique
+description: Critiques content you provide or are drafting — emails, slides, decks, documents, Teams messages, proposals — by interrogating intent (audience, core message, desired action) first, then delivering direct, prioritised, candid feedback with concrete fixes. Works in Czech and English, matching the language of the material.
+version: 1.0.0
+tags:
+  - communication
+  - productivity
+install_method: zip
+requires: []
+author: jforman
+priority: 3

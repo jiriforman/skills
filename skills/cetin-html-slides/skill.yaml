@@ -1,0 +1,11 @@
+name: cetin-html-slides
+display_name: CETIN HTML Slides
+description: Build CETIN-branded HTML presentation decks — a fixed 16:9 stage, chapter-split files, a contents page with per-slide deep links, and a master markdown file holding on-slide text plus facilitator notes. Use when asked to create, extend, restyle or rebuild a CETIN training deck or slide set as HTML, to turn a content outline or .md into presentable slides, or to convert an existing PowerPoint into this format. Also use when editing slides in a deck that was built this way.
+version: 1.0.0
+tags:
+  - communication
+  - presentation
+install_method: zip
+requires: []
+author: jforman
+priority: 2
